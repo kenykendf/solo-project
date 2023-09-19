@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS users (
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
     created_at timestamptz,
-    updated_at timestamptz NOT NULL,
-    deleted_at timestamptz NOT NULL,
-    UNIQUE(email,phone,member_id)
+    updated_at timestamptz,
+    deleted_at timestamptz,
+    UNIQUE(email,phone)
 )

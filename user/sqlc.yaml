@@ -1,0 +1,22 @@
+version: "2"
+sql:
+  - engine: "postgresql"
+    queries: 
+      - "./migration/queries/users"
+    schema: "./migration/pgsql/"
+    gen:
+      go:
+        package: "user"
+        out: "../sqlc/user"
+        emit_db_tags: true
+        emit_prepared_queries: true
+        emit_interface: true
+        emit_json_tags: true
+        # output_db_file_name: user_db.go
+        # output_querier_file_name: user_querier.go
+        # output_models_file_name: user_model.go
+        # output_batch_file_name: user_batch.go
+        query_parameter_limit: 0
+        emit_params_struct_pointers: true
+        json_tags_id_uppercase: true
+        
